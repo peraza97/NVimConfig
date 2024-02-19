@@ -2,6 +2,13 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      vim.diagnostic.config({
+        underline = true,
+        update_in_insert = true,
+        virtual_text = true,
+        severity_sort = true
+      })
+
       local lspconfig = require("lspconfig")
       lspconfig.clangd.setup({})
 
